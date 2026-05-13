@@ -19,6 +19,7 @@
     "react-i18next": "^17.0.7",
     "react-native": "0.85.3",
     "react-native-gesture-handler": "^2.31.2",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-localize": "^3.7.0",
     "react-native-mmkv": "2.x",
     "react-native-safe-area-context": "^5.7.0",

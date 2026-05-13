@@ -10,11 +10,13 @@ const ja = {
     loading: '読み込み中...',
   },
   onboarding: {
-    getStarted: 'はじめる',
+    getStarted: '✨ はじめる',
     alreadyHaveAccount: 'アカウントをお持ちの方はこちら',
+    nextStep: '次へ →',
+    startNow: '🚀 今すぐ始める',
     privacy: {
       title: 'プライバシー最優先',
-      desc: 'すべてのデータはデバイスに暗号化して保存',
+      desc: 'すべてのデータはデバイスに暗号化して保存。\nサーバーはあなたの記録に触れません。',
       localFirst: 'ローカルファースト',
       localFirstSub: 'データはあなたのデバイスに保存',
       encryption: 'AES-256暗号化',
@@ -24,11 +26,25 @@ const ja = {
     },
     sync: {
       title: 'ふたりだけの空間',
-      desc: 'あなたとパートナーだけが見られます',
+      desc: 'あなたとパートナーだけが見られます\n完全暗号化、完全プライベート',
+      feature1: 'リアルタイム暗号化同期',
+      feature2: '共有ウィッシュリスト',
     },
     ai: {
       title: 'AI健康インサイト',
-      desc: 'データに基づくパーソナライズされた提案',
+      desc: 'データに基づくパーソナライズされた提案\nリズムと健康トレンドを把握',
+      feature1: 'パーソナライズ分析',
+      feature2: '健康トレンド予測',
+    },
+    ready: {
+      title: '準備完了',
+      desc: '美しい瞬間を記録し始めよう\nふたりだけの空間を作ろう',
+    },
+    splash: {
+      subtitle: 'ふたりだけのプライベート空間\n大切な瞬間を記録しよう',
+      badge1: '🔐 エンドツーエンド暗号化',
+      badge2: '💑 カップル同期',
+      badge3: '📊 AI分析',
     },
   },
   auth: {

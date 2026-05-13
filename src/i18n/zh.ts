@@ -10,11 +10,13 @@ const zh = {
     loading: '加载中...',
   },
   onboarding: {
-    getStarted: '开始体验',
+    getStarted: '✨ 开始体验',
     alreadyHaveAccount: '已有账号，去登录',
+    nextStep: '下一步 →',
+    startNow: '🚀 立即开始',
     privacy: {
       title: '隐私是第一位的',
-      desc: '所有数据端对端加密存储在你的设备上',
+      desc: '所有数据端对端加密存储在你的设备上。\n我们的服务器永远不会接触你的亲密记录。',
       localFirst: '本地优先存储',
       localFirstSub: '数据保存在您的设备',
       encryption: 'AES-256 加密',
@@ -24,11 +26,25 @@ const zh = {
     },
     sync: {
       title: '专属双人空间',
-      desc: '只有你和伴侣可以看到彼此的记录',
+      desc: '只有你和伴侣可以看到彼此的记录\n端对端加密，绝对私密',
+      feature1: '实时加密同步',
+      feature2: '共享心愿清单',
     },
     ai: {
       title: 'AI 健康洞察',
-      desc: '基于你们的数据生成个性化建议',
+      desc: '基于你们的数据生成个性化建议\n了解你们的亲密节律与健康趋势',
+      feature1: '个性化数据分析',
+      feature2: '健康趋势预测',
+    },
+    ready: {
+      title: '一切就绪',
+      desc: '开始记录你们的美好时光\n一起创造专属的私密空间',
+    },
+    splash: {
+      subtitle: '你们的私密空间\n记录每一个珍贵时刻',
+      badge1: '🔐 端对端加密',
+      badge2: '💑 双人同步',
+      badge3: '📊 AI分析',
     },
   },
   auth: {

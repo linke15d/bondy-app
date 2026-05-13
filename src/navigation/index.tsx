@@ -2,22 +2,24 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Colors } from '../theme/colors';
 
-// 暂时用占位符页面，后续按模块替换
+import SplashScreen from '../screens/onboarding/SplashScreen';
+import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
+
 const PlaceholderScreen = ({ name }: { name: string }) => (
-  React.createElement(
-    require('react-native').View,
-    { style: { flex: 1, backgroundColor: Colors.background, alignItems: 'center', justifyContent: 'center' } },
-    React.createElement(Text, { style: { color: Colors.text.primary, fontSize: 18 } }, name)
-  )
+  <View style={{ flex: 1, backgroundColor: Colors.background, alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ color: Colors.text.primary, fontSize: 18 }}>{name}</Text>
+  </View>
 );
 
 export type RootStackParamList = {
-  Onboarding: undefined;
-  Auth: undefined;
+  Splash: undefined;
+  OnboardingPrivacy: undefined;
+  Register: undefined;
+  Login: undefined;
   Main: undefined;
 };
 
@@ -56,10 +58,10 @@ function MainTabs() {
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
-            React.createElement(require('react-native').View, {
-              style: { width: 52, height: 52, borderRadius: 26, backgroundColor: Colors.primary, alignItems: 'center', justifyContent: 'center', marginTop: -20 }
-            }, React.createElement(Text, { style: { fontSize: 24, color: 'white' } }, '＋'))
-          )
+            <View style={{ width: 52, height: 52, borderRadius: 26, backgroundColor: Colors.primary, alignItems: 'center', justifyContent: 'center', marginTop: -20 }}>
+              <Text style={{ fontSize: 24, color: 'white' }}>＋</Text>
+            </View>
+          ),
         }} />
       <Tab.Screen name="Insights" component={() => <PlaceholderScreen name="洞察" />}
         options={{ tabBarLabel: t('tabBar.insights'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📊</Text> }} />
@@ -73,8 +75,10 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Onboarding" component={() => <PlaceholderScreen name="引导页" />} />
-        <Stack.Screen name="Auth" component={() => <PlaceholderScreen name="登录注册" />} />
+        <Stack.Screen name="Splash" component={SplashScreen} />
+        <Stack.Screen name="OnboardingPrivacy" component={OnboardingScreen} />
+        <Stack.Screen name="Register" component={() => <PlaceholderScreen name="注册" />} />
+        <Stack.Screen name="Login" component={() => <PlaceholderScreen name="登录" />} />
         <Stack.Screen name="Main" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -10,11 +10,13 @@ const en = {
     loading: 'Loading...',
   },
   onboarding: {
-    getStarted: 'Get Started',
+    getStarted: '✨ Get Started',
     alreadyHaveAccount: 'Already have an account? Log in',
+    nextStep: 'Next →',
+    startNow: '🚀 Start Now',
     privacy: {
       title: 'Privacy First',
-      desc: 'All data is end-to-end encrypted on your device',
+      desc: 'All data is end-to-end encrypted on your device.\nOur servers never touch your intimate records.',
       localFirst: 'Local-first storage',
       localFirstSub: 'Data saved on your device',
       encryption: 'AES-256 Encryption',
@@ -24,11 +26,25 @@ const en = {
     },
     sync: {
       title: 'Your Private Space',
-      desc: 'Only you and your partner can see each other\'s records',
+      desc: 'Only you and your partner can see records\nEnd-to-end encrypted, absolutely private',
+      feature1: 'Real-time encrypted sync',
+      feature2: 'Shared wish list',
     },
     ai: {
       title: 'AI Health Insights',
-      desc: 'Personalized suggestions based on your data',
+      desc: 'Personalized suggestions based on your data\nUnderstand your intimacy rhythm and trends',
+      feature1: 'Personalized data analysis',
+      feature2: 'Health trend prediction',
+    },
+    ready: {
+      title: 'All Set',
+      desc: 'Start recording your beautiful moments\nCreate your exclusive private space together',
+    },
+    splash: {
+      subtitle: 'Your private space\nRecord every precious moment',
+      badge1: '🔐 End-to-end encrypted',
+      badge2: '💑 Couple sync',
+      badge3: '📊 AI analysis',
     },
   },
   auth: {
