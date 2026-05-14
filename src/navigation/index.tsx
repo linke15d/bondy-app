@@ -8,6 +8,7 @@ import { Colors } from '../theme/colors';
 
 import SplashScreen from '../screens/onboarding/SplashScreen';
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
+import RegisterScreen from '../screens/auth/RegisterScreen';
 
 const PlaceholderScreen = ({ name }: { name: string }) => (
   <View style={{ flex: 1, backgroundColor: Colors.background, alignItems: 'center', justifyContent: 'center' }}>
@@ -77,7 +78,7 @@ export default function Navigation() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="OnboardingPrivacy" component={OnboardingScreen} />
-        <Stack.Screen name="Register" component={() => <PlaceholderScreen name="注册" />} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Login" component={() => <PlaceholderScreen name="登录" />} />
         <Stack.Screen name="Main" component={MainTabs} />
       </Stack.Navigator>

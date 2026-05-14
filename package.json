@@ -24,6 +24,7 @@
     "react-native-mmkv": "2.x",
     "react-native-safe-area-context": "^5.7.0",
     "react-native-screens": "^4.25.0",
+    "react-native-toast-message": "^2.3.3",
     "zustand": "^5.0.13"
   },
   "devDependencies": {
