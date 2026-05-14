@@ -16,6 +16,8 @@ type Gender = 'female' | 'male' | 'other';
 
 // 密码规则：大小写字母 + 数字 + 特殊符号 + 最少8位
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+//邮箱格式规则
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export default function RegisterScreen() {
     const { register, isLoading } = useAuthStore();
@@ -62,6 +64,10 @@ export default function RegisterScreen() {
         }
         if (!email.trim()) {
             Toast.show({ type: 'error', text1: t('auth.phonePlaceholder'), position: 'top' });
+            return;
+        }
+        if (!EMAIL_REGEX.test(email.trim())) {
+            Toast.show({ type: 'error', text1: t('auth.errorEmailFormat'), position: 'top' });
             return;
         }
         if (!PASSWORD_REGEX.test(password)) {

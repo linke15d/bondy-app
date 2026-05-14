@@ -57,6 +57,7 @@ request.interceptors.request.use(
         if (cachedToken) {
             config.headers.Authorization = `Bearer ${cachedToken}`;
         }
+        config.headers['Accept-Language'] = i18n.language;
         return config;
     },
     error => Promise.reject(error),
@@ -114,7 +115,7 @@ request.interceptors.response.use(
                 case 500:
                     return Promise.reject(new Error(i18n.t('request.serverError')));
                 default:
-                    return Promise.reject(new Error(i18n.t('request.networkError')));
+                    return Promise.reject(new Error(error.response.data.message));
             }
         }
         if (error.code === 'ECONNABORTED') {

@@ -89,6 +89,7 @@ const ja = {
     errorPasswordFormat: '大文字・小文字・数字・特殊文字を含む8文字以上が必要です',
     errorPasswordNotMatch: 'パスワードが一致しません',
     errorRegister: '登録失敗、もう一度お試しください',
+    errorEmailFormat: '正しいメールアドレスを入力してください',
   },
   home: {
     greeting: 'こんにちは、{{name}}',

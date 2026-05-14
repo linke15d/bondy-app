@@ -89,6 +89,7 @@ const zh = {
     errorPasswordFormat: '密码需包含大小写字母、数字和特殊符号，至少8位',
     errorPasswordNotMatch: '两次输入的密码不一致',
     errorRegister: '注册失败，请重试',
+    errorEmailFormat: '请输入正确的邮箱格式',
   },
   home: {
     greeting: '你好，{{name}}',

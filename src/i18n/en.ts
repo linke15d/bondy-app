@@ -89,6 +89,7 @@ const en = {
     errorPasswordFormat: 'Must contain uppercase, lowercase, number and special character, min 8 chars',
     errorPasswordNotMatch: 'Passwords do not match',
     errorRegister: 'Registration failed, please try again',
+    errorEmailFormat: 'Please enter a valid email address',
   },
   home: {
     greeting: 'Hello, {{name}}',

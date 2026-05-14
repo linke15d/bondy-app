@@ -59,6 +59,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         set({ isLoading: true });
         try {
             const data = await registerApi(params);
+            console.log(data,'data')
             await storage.set('token', data.access_token);
             await storage.set('refresh_token', data.refresh_token);
             await storage.set('user', JSON.stringify(data));
