@@ -10,6 +10,18 @@ First, you will need to run **Metro**, the JavaScript build tool for React Nativ
 
 To start the Metro dev server, run the following command from the root of your React Native project:
 
+## .env.development
+yarn ios
+yarn android
+
+## .env.staging
+ENVFILE=.env.staging yarn ios
+ENVFILE=.env.staging yarn android
+
+## .env.production
+ENVFILE=.env.production yarn ios
+ENVFILE=.env.production yarn android
+
 ```sh
 # Using npm
 npm start

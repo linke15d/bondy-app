@@ -110,6 +110,16 @@ const en = {
     logout: 'Logout',
     language: 'Language',
   },
+  request: {
+    failed: 'Request failed',
+    noRefreshToken: 'Session expired, please login again',
+    forbidden: 'Access denied',
+    notFound: 'API not found',
+    serverError: 'Server error',
+    networkError: 'Network error',
+    timeout: 'Request timeout',
+    connectionFailed: 'Connection failed',
+  },
 };
 
 export default en;

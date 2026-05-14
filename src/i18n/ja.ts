@@ -110,6 +110,16 @@ const ja = {
     logout: 'ログアウト',
     language: '言語設定',
   },
+  request: {
+    failed: 'リクエスト失敗',
+    noRefreshToken: 'セッションが切れました。再ログインしてください',
+    forbidden: 'アクセス権限がありません',
+    notFound: 'APIが存在しません',
+    serverError: 'サーバーエラー',
+    networkError: 'ネットワークエラー',
+    timeout: 'リクエストタイムアウト',
+    connectionFailed: 'ネットワーク接続失敗',
+  },
 };
 
 export default ja;

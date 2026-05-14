@@ -110,6 +110,16 @@ const zh = {
     logout: '退出登录',
     language: '语言设置',
   },
+  request: {
+    failed: '请求失败',
+    noRefreshToken: '登录已过期，请重新登录',
+    forbidden: '没有权限',
+    notFound: '接口不存在',
+    serverError: '服务器错误',
+    networkError: '网络错误',
+    timeout: '请求超时',
+    connectionFailed: '网络连接失败',
+  },
 };
 
 export default zh;
