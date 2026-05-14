@@ -2,20 +2,20 @@ import request from '../utils/request';
 
 export interface RegisterParams {
     nickname: string;
-    phone: string;
+    email: string;
     password: string;
     gender: 'female' | 'male' | 'other';
 }
 
 export interface LoginParams {
-    phone: string;
+    email: string;
     password: string;
 }
 
 export interface UserInfo {
     id: string;
     nickname: string;
-    phone: string;
+    email: string;
     gender: string;
     avatar?: string;
     access_token: string;
@@ -23,7 +23,7 @@ export interface UserInfo {
 }
 
 export const registerApi = (params: RegisterParams): Promise<UserInfo> => {
-    return request.post('/v1/auth/register', params);
+    return request.post('/api/v1/auth/register', params);
 };
 
 export const loginApi = (params: LoginParams): Promise<UserInfo> => {

@@ -5,6 +5,8 @@ import Config from 'react-native-config';
 export const BASE_URL = Config.API_BASE_URL;
 // export const BASE_URL = 'http://100.67.38.57:8080';
 
+console.log(BASE_URL,'BASE_URL')
+
 let cachedToken: string | null = null;
 let cachedRefreshToken: string | null = null;
 

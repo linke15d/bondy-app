@@ -12,7 +12,7 @@ interface AuthState {
     login: (phone: string, password: string) => Promise<void>;
     register: (params: {
         nickname: string;
-        phone: string;
+        email: string;
         password: string;
         gender: 'female' | 'male' | 'other';
     }) => Promise<void>;
@@ -40,10 +40,10 @@ export const useAuthStore = create<AuthState>((set) => ({
         }
     },
 
-    login: async (phone, password) => {
+    login: async (email, password) => {
         set({ isLoading: true });
         try {
-            const data = await loginApi({ phone, password });
+            const data = await loginApi({ email, password });
             await storage.set('token', data.access_token);
             await storage.set('refresh_token', data.refresh_token);
             await storage.set('user', JSON.stringify(data));
