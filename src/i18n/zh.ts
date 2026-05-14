@@ -90,6 +90,10 @@ const zh = {
     errorPasswordNotMatch: '两次输入的密码不一致',
     errorRegister: '注册失败，请重试',
     errorEmailFormat: '请输入正确的邮箱格式',
+    loginSubtitle: '你们的私密空间',
+    or: '或者',
+    errorPasswordEmpty: '请输入密码',
+    errorLogin: '登录失败，请重试',
   },
   home: {
     greeting: '你好，{{name}}',

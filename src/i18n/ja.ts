@@ -90,6 +90,10 @@ const ja = {
     errorPasswordNotMatch: 'パスワードが一致しません',
     errorRegister: '登録失敗、もう一度お試しください',
     errorEmailFormat: '正しいメールアドレスを入力してください',
+    loginSubtitle: 'ふたりだけの空間',
+    or: 'または',
+    errorPasswordEmpty: 'パスワードを入力してください',
+    errorLogin: 'ログイン失敗、もう一度お試しください',
   },
   home: {
     greeting: 'こんにちは、{{name}}',

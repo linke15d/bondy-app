@@ -90,6 +90,10 @@ const en = {
     errorPasswordNotMatch: 'Passwords do not match',
     errorRegister: 'Registration failed, please try again',
     errorEmailFormat: 'Please enter a valid email address',
+    loginSubtitle: 'Your private space',
+    or: 'or',
+    errorPasswordEmpty: 'Please enter password',
+    errorLogin: 'Login failed, please try again',
   },
   home: {
     greeting: 'Hello, {{name}}',

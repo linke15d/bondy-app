@@ -5,10 +5,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Colors } from '../theme/colors';
+import { useAuthStore } from '../store/authStore';
 
 import SplashScreen from '../screens/onboarding/SplashScreen';
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen';
+import LoginScreen from '../screens/auth/LoginScreen';
 
 const PlaceholderScreen = ({ name }: { name: string }) => (
   <View style={{ flex: 1, backgroundColor: Colors.background, alignItems: 'center', justifyContent: 'center' }}>
@@ -51,35 +53,48 @@ function MainTabs() {
         tabBarInactiveTintColor: Colors.text.placeholder,
         tabBarLabelStyle: { fontSize: 10 },
       }}>
-      <Tab.Screen name="Home" component={() => <PlaceholderScreen name="首页" />}
+      <Tab.Screen name="Home"
+        component={() => <PlaceholderScreen name="首页" />}
         options={{ tabBarLabel: t('tabBar.home'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>🏠</Text> }} />
-      <Tab.Screen name="Calendar" component={() => <PlaceholderScreen name="日历" />}
+      <Tab.Screen name="Calendar"
+        component={() => <PlaceholderScreen name="日历" />}
         options={{ tabBarLabel: t('tabBar.calendar'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📅</Text> }} />
-      <Tab.Screen name="NewRecord" component={() => <PlaceholderScreen name="新建记录" />}
+      <Tab.Screen name="NewRecord"
+        component={() => <PlaceholderScreen name="新建记录" />}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
-            <View style={{ width: 52, height: 52, borderRadius: 26, backgroundColor: Colors.primary, alignItems: 'center', justifyContent: 'center', marginTop: -20 }}>
+            <View style={{
+              width: 52, height: 52, borderRadius: 26,
+              backgroundColor: Colors.primary,
+              alignItems: 'center', justifyContent: 'center', marginTop: -20,
+            }}>
               <Text style={{ fontSize: 24, color: 'white' }}>＋</Text>
             </View>
           ),
         }} />
-      <Tab.Screen name="Insights" component={() => <PlaceholderScreen name="洞察" />}
+      <Tab.Screen name="Insights"
+        component={() => <PlaceholderScreen name="洞察" />}
         options={{ tabBarLabel: t('tabBar.insights'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📊</Text> }} />
-      <Tab.Screen name="Profile" component={() => <PlaceholderScreen name="我的" />}
+      <Tab.Screen name="Profile"
+        component={() => <PlaceholderScreen name="我的" />}
         options={{ tabBarLabel: t('tabBar.profile'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>👤</Text> }} />
     </Tab.Navigator>
   );
 }
 
 export default function Navigation() {
+  const { isLoggedIn } = useAuthStore();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={isLoggedIn ? 'Main' : 'Splash'}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="OnboardingPrivacy" component={OnboardingScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Login" component={() => <PlaceholderScreen name="登录" />} />
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Main" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>

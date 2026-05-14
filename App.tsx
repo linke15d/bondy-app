@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StatusBar, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Toast, { BaseToast, ErrorToast, ToastConfig } from 'react-native-toast-message';
 import './src/i18n';
 import Navigation from './src/navigation';
 import { useAuthStore } from './src/store/authStore';
+import { Colors } from './src/theme/colors';
 
 const toastConfig: ToastConfig = {
     error: (props) => (
@@ -90,10 +91,20 @@ const toastConfig: ToastConfig = {
 
 export default function App() {
     const loadFromStorage = useAuthStore(s => s.loadFromStorage);
+    const [appReady, setAppReady] = useState(false);
 
     useEffect(() => {
-        loadFromStorage();
+        loadFromStorage().finally(() => {
+            setAppReady(true);
+        });
     }, []);
+
+    // 等待本地存储加载完成再渲染导航
+    if (!appReady) {
+        return (
+            <View style={{ flex: 1, backgroundColor: Colors.background }} />
+        );
+    }
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>

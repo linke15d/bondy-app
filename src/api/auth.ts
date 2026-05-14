@@ -27,13 +27,13 @@ export const registerApi = (params: RegisterParams): Promise<UserInfo> => {
 };
 
 export const loginApi = (params: LoginParams): Promise<UserInfo> => {
-    return request.post('/v1/auth/login', params);
+    return request.post('/api/v1/auth/login', params);
 };
 
 export const getUserInfoApi = (): Promise<UserInfo> => {
-    return request.get('/v1/auth/profile');
+    return request.get('/api/v1/auth/profile');
 };
 
 export const logoutApi = (): Promise<void> => {
-    return request.post('/v1/auth/logout');
+    return request.post('/api/v1/auth/logout');
 };
