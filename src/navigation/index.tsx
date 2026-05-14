@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Colors } from '../theme/colors';
 import { useAuthStore } from '../store/authStore';
@@ -55,30 +55,24 @@ function MainTabs() {
       }}>
       <Tab.Screen name="Home"
         component={() => <PlaceholderScreen name="首页" />}
-        options={{ tabBarLabel: t('tabBar.home'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>🏠</Text> }} />
+        options={{ tabBarLabel: t('tabBar.home'), tabBarIcon: ({ color }) => <Image source={require('./images/home.png')} style={{ width: 15, height: 20 }} /> }} />
       <Tab.Screen name="Calendar"
         component={() => <PlaceholderScreen name="日历" />}
-        options={{ tabBarLabel: t('tabBar.calendar'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📅</Text> }} />
+        options={{ tabBarLabel: t('tabBar.calendar'), tabBarIcon: ({ color }) => <Image source={require('./images/calendar.png')} style={{ width: 15, height: 20 }} /> }} />
       <Tab.Screen name="NewRecord"
-        component={() => <PlaceholderScreen name="新建记录" />}
+        component={() => <PlaceholderScreen name="" />}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
-            <View style={{
-              width: 52, height: 52, borderRadius: 26,
-              backgroundColor: Colors.primary,
-              alignItems: 'center', justifyContent: 'center', marginTop: -20,
-            }}>
-              <Text style={{ fontSize: 24, color: 'white' }}>＋</Text>
-            </View>
+            <Image source={require('./images/add.png')} style={{ width: 94, height: 94 }} />
           ),
         }} />
       <Tab.Screen name="Insights"
         component={() => <PlaceholderScreen name="洞察" />}
-        options={{ tabBarLabel: t('tabBar.insights'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>📊</Text> }} />
+        options={{ tabBarLabel: t('tabBar.insights'), tabBarIcon: ({ color }) => <Image source={require('./images/insights.png')} style={{ width: 15, height: 20 }} /> }} />
       <Tab.Screen name="Profile"
         component={() => <PlaceholderScreen name="我的" />}
-        options={{ tabBarLabel: t('tabBar.profile'), tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>👤</Text> }} />
+        options={{ tabBarLabel: t('tabBar.profile'), tabBarIcon: ({ color }) => <Image source={require('./images/profile.png')} style={{ width: 15, height: 20 }} /> }} />
     </Tab.Navigator>
   );
 }
